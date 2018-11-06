@@ -1,6 +1,28 @@
 <template>
   <div id="app">
-    <div class="tabs">
+    <el-container>
+      <el-aside width="200px">
+        <el-menu
+          class="el-menu-vertical-demo"
+          @open="handleOpen"
+          @close="handleClose">
+          <el-menu-item index='1'>
+            <router-link :to="{name:'landing'}">
+              <div>Landing</div>
+            </router-link>
+          </el-menu-item>
+          <el-menu-item index='2'>
+            <router-link :to="{name:'test'}">
+              <div>Test</div>
+            </router-link>
+          </el-menu-item>
+        </el-menu>
+      </el-aside>
+      <el-main>
+        <router-view></router-view>
+      </el-main>
+    </el-container>
+    <!-- <div class="tabs">
       <ul>
         <li>
           <router-link :to ="{name:'landing'}">
@@ -16,13 +38,21 @@
     </div>
     <div class="content">
       <router-view></router-view>
-    </div>
+    </div> -->
   </div>
 </template>
 
 <script>
   export default {
-    name: 'data-tool'
+    name: 'data-tool',
+    methods: {
+      handleOpen (key, keyPath) {
+        console.log(key, keyPath)
+      },
+      handleClose (key, keyPath) {
+        console.log(key, keyPath)
+      }
+    }
   }
 </script>
 
