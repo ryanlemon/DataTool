@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <el-container>
-      <el-aside width="200px">
+      <el-aside width="100px">
         <el-menu
           class="el-menu-vertical-demo"
           @open="handleOpen"
@@ -12,6 +12,21 @@
             </router-link>
           </el-menu-item>
           <el-menu-item index='2'>
+            <router-link :to="{name:'screen'}">
+              <div>Screen</div>
+            </router-link>
+          </el-menu-item>
+          <el-menu-item index='3'>
+            <router-link :to="{name:'translation'}">
+              <div>Translation</div>
+            </router-link>
+          </el-menu-item>
+          <el-menu-item index='4'>
+            <router-link :to="{name:'message'}">
+              <div>Message</div>
+            </router-link>
+          </el-menu-item>
+          <el-menu-item index='9'>
             <router-link :to="{name:'test'}">
               <div>Test</div>
             </router-link>
