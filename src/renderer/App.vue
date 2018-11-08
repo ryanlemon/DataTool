@@ -6,30 +6,10 @@
           class="el-menu-vertical-demo"
           @open="handleOpen"
           @close="handleClose">
-          <el-menu-item index='1'>
-            <router-link :to="{name:'landing'}">
-              <div>Landing</div>
-            </router-link>
-          </el-menu-item>
-          <el-menu-item index='2'>
-            <router-link :to="{name:'screen'}">
-              <div>Screen</div>
-            </router-link>
-          </el-menu-item>
-          <el-menu-item index='3'>
-            <router-link :to="{name:'translation'}">
-              <div>Translation</div>
-            </router-link>
-          </el-menu-item>
-          <el-menu-item index='4'>
-            <router-link :to="{name:'message'}">
-              <div>Message</div>
-            </router-link>
-          </el-menu-item>
-          <el-menu-item index='9'>
-            <router-link :to="{name:'test'}">
-              <div>Test</div>
-            </router-link>
+          <el-menu-item v-for="item in items"
+                        :key = item.index
+                        :index = item.index.toString()>
+            <router-link :to="item.name">{{item.label}}</router-link>
           </el-menu-item>
         </el-menu>
       </el-aside>
@@ -37,29 +17,25 @@
         <router-view></router-view>
       </el-main>
     </el-container>
-    <!-- <div class="tabs">
-      <ul>
-        <li>
-          <router-link :to ="{name:'landing'}">
-            <div>购物车</div>
-          </router-link>
-        </li>
-        <li>
-          <router-link :to ="{name:'test'}">
-            <div>个人中心</div>
-          </router-link>
-        </li>
-      </ul>
-    </div>
-    <div class="content">
-      <router-view></router-view>
-    </div> -->
   </div>
 </template>
 
 <script>
   export default {
     name: 'data-tool',
+    data () {
+      return {
+        items: [
+          {index: 1, name: 'landing', label: 'Landing'},
+          {index: 2, name: 'screen', label: 'Screen'},
+          {index: 3, name: 'translation', label: 'Translation'},
+          {index: 4, name: 'message', label: 'Message'},
+          {index: 5, name: 'list', label: 'List'},
+          {index: 6, name: 'menu', label: 'Menu'},
+          {index: 9, name: 'test', label: 'Test'}
+        ]
+      }
+    },
     methods: {
       handleOpen (key, keyPath) {
         console.log(key, keyPath)
