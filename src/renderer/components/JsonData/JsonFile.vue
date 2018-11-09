@@ -1,6 +1,7 @@
 <script>
 import fs from 'fs-extra'
-const dataPath = 'D:\\Develop\\VueProj\\ScreenData'
+// const dataPath = 'D:\\Develop\\VueProj\\ScreenData'
+const dataPath = 'C:\\Apprise\\Latest\\ScreenData'
 export default {
   getFileList: function (type) {
     console.log('get file list -- type: ' + type)
