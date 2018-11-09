@@ -1,14 +1,24 @@
 <script>
 import fs from 'fs-extra'
 const dataPath = 'D:\\Develop\\VueProj\\ScreenData'
-
 export default {
   getFileList: function (type) {
-    if (type === 'screen') {
-      fs.readdir(dataPath + '\\sd-screen', (err, files) => {
-        if (!err) { return files } else { err.toString() }
-      })
+    console.log('get file list -- type: ' + type)
+    let folderName = 'sd-'
+    switch (type) {
+      case 'screen':
+      case 'list':
+      case 'menu':
+        folderName = folderName + type
+        break
+      case 'message':
+      case 'translation':
+        folderName = folderName + type + '\\'
+        break
+      default:
+        console.log('Invalid Type')
     }
+    return fs.readdirSync(dataPath + '\\' + folderName + '\\')
   }
 }
 </script>

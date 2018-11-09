@@ -37,6 +37,16 @@ export default new Router({
       path: '/message',
       name: 'message',
       component: require('@/components/MessagePage').default
+    },
+    {
+      path: '/list',
+      name: 'list',
+      component: require('@/components/ListPage').default
+    },
+    {
+      path: '/menu',
+      name: 'menu',
+      component: require('@/components/MenuPage').default
     }
   ]
 })

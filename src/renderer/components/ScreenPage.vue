@@ -1,12 +1,13 @@
 <template>
     <div>
-        SCREEN PAGE
+      <screen-selector field-type='screen' init-value=''></screen-selector>
     </div>
 </template>
 
 <script>
+import ScreenSelector from './Base/Selector'
 export default {
-  name: 'abc'
+  components: {ScreenSelector}
 }
 </script>
 
