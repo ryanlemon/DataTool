@@ -6,10 +6,12 @@
 // const STORE_PATH = APP.getPath('userData')
 export default {
   methods: {
-        getData: function (filePath) {
-          var adapter = new FileSync(filePath)
-          return Datastore(adapter)
-        }
+
+  },
+  getDetail: function (filePath) {
+        console.log(filePath)
+        var adapter = new FileSync(filePath)
+        return Datastore(adapter)
   }
 }
 </script>
