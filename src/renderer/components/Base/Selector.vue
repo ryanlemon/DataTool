@@ -1,5 +1,5 @@
 <template>
-    <el-select v-model="init" filterable :placeholder="inputType">
+    <el-select v-model="selectValue" filterable :placeholder="inputType" @change="onChange($event)">
         <el-option
             v-for="item in options"
             :key="item"
@@ -14,7 +14,7 @@ export default {
   props: ['fieldType', 'initValue'],
   data () {
     return {
-      init: ''
+      selectValue: ''
     }
   },
   computed: {
@@ -30,6 +30,12 @@ export default {
         case 'menu':
           return 'Menu Name'
       }
+    }
+
+  },
+  methods: {
+    onChange: function (event) {
+      this.$emit('change-value', this.selectValue, event)
     }
   }
 }
