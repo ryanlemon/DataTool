@@ -56,11 +56,11 @@
     "ag-grid-community": "^19.1.1",
     "ag-grid-vue": "^19.1.1",
     "axios": "^0.18.0",
-    "element-ui": "^2.4.9",
     "fs-extra": "^7.0.0",
     "lowdb": "^1.0.0",
     "vue": "^2.5.16",
     "vue-electron": "^1.0.6",
+    "vue-material": "^1.0.0-beta-10.2",
     "vue-router": "^3.0.1",
     "vuex": "^3.0.1",
     "vuex-electron": "^1.0.0"
