@@ -1,12 +1,14 @@
 <template>
-    <el-select v-model="selectValue" filterable :placeholder="inputType" @change="onChange($event)">
-        <el-option
+  <md-field>
+    <md-select v-model="selectValue" @change="onChange($event)">
+        <md-option
             v-for="item in options"
             :key="item"
             :label="item"
             :value="item.toString()">
-        </el-option>
-    </el-select>
+        </md-option>
+    </md-select>
+  </md-field>
 </template>
 <script>
 import jsonFile from '../JsonData/JsonFile'

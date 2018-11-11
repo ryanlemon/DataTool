@@ -2,7 +2,7 @@ import Vue from 'vue'
 import axios from 'axios'
 import VueMaterial from 'vue-material'
 import 'vue-material/dist/vue-material.min.css'
-
+import 'material-design-icons/iconfont/material-icons.css'
 import App from './App'
 import router from './router'
 import store from './store'

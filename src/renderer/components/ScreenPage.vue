@@ -1,13 +1,13 @@
 <template>
     <div>
-      <screen-selector field-type='screen' init-value=''></screen-selector>
+      <screen-select field-type='screen' init-value=''></screen-select>
     </div>
 </template>
 
 <script>
-import ScreenSelector from './Base/Selector'
+import ScreenSelect from './Base/Select'
 export default {
-  components: {ScreenSelector}
+  components: {ScreenSelect}
 }
 </script>
 

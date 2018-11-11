@@ -31,23 +31,6 @@
         <router-view></router-view>
       </md-app-content>
     </md-app>
-    <el-container>
-      <el-aside width="100px">
-        <el-menu
-          class="el-menu-vertical-demo"
-          @open="handleOpen"
-          @close="handleClose">
-          <el-menu-item v-for="item in items"
-                        :key = item.index
-                        :index = item.index.toString()>
-            <router-link :to="item.name">{{item.label}}</router-link>
-          </el-menu-item>
-        </el-menu>
-      </el-aside>
-      <el-main>
-        <router-view></router-view>
-      </el-main>
-    </el-container>
   </div>
 </template>
 
@@ -56,28 +39,34 @@
     name: 'data-tool',
     data () {
       return {
+        menuVisible: false,
         items: [
           {index: 1, name: 'landing', label: 'Landing', icon: 'move_to_inbox'},
-          {index: 2, name: 'screen', label: 'Screen'},
-          {index: 3, name: 'translation', label: 'Translation'},
-          {index: 4, name: 'message', label: 'Message'},
-          {index: 5, name: 'list', label: 'List'},
-          {index: 6, name: 'menu', label: 'Menu'},
-          {index: 9, name: 'test', label: 'Test'}
+          {index: 2, name: 'screen', label: 'Screen', icon: 'desktop_windows'},
+          {index: 3, name: 'translation', label: 'Translation', icon: 'translate'},
+          {index: 4, name: 'message', label: 'Message', icon: 'message'},
+          {index: 5, name: 'list', label: 'List', icon: 'list'},
+          {index: 6, name: 'menu', label: 'Menu', icon: 'menu'},
+          {index: 9, name: 'test', label: 'Test', icon: 'settings'}
         ]
       }
     },
     methods: {
-      handleOpen (key, keyPath) {
-        console.log(key, keyPath)
-      },
-      handleClose (key, keyPath) {
-        console.log(key, keyPath)
+      toggleMenu () {
+        this.menuVisible = !this.menuVisible
       }
     }
   }
 </script>
 
-<style>
-  /* CSS */
+<style >
+  .md-app {
+    min-height: 350px;
+    border: 1px solid rgba(#000, .12);
+  }
+
+  .md-drawer {
+    width: 230px;
+    max-width: calc(100vw - 125px);
+  }
 </style>
