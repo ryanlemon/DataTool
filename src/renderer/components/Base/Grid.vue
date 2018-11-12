@@ -1,5 +1,5 @@
 <template>
-    <ag-grid-vue style="width: 500px; height: 500px;"
+    <ag-grid-vue style="width: 100%; height: 100%;"
                  class="ag-theme-balham"
                  :columnDefs="columnDefs"
                  :rowData="rowData">
@@ -9,27 +9,21 @@
 import {AgGridVue} from 'ag-grid-vue'
 export default {
   name: 'grid',
+  props: {
+    gridLayout: [Array],
+    gridData: [Array]
+  },
   data () {
     return {
-      columnDefs: null,
-      rowData: null
+      columnDefs: this.gridLayout,
+      rowData: this.gridData
     }
   },
   components: {
     AgGridVue
   },
-  beforeMount () {
-    this.columnDefs = [
-      {headerName: 'Make', field: 'make'},
-      {headerName: 'Model', field: 'model'},
-      {headerName: 'Price', field: 'price'}
-    ]
-
-    this.rowData = [
-      {make: 'Toyota', model: 'Celica', price: 35000},
-      {make: 'Ford', model: 'Mondeo', price: 32000},
-      {make: 'Porsche', model: 'Boxter', price: 72000}
-    ]
+  loadData: function (data) {
+    this.rowData = data
   }
 
 }

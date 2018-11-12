@@ -1,6 +1,6 @@
 <script>
 import fs from 'fs-extra'
-const dataPath = 'D:\\Ryan\\Eletron-Vue-Project\\ScreenData\\'
+const dataPath = 'D:\\Develop\\VueProj\\ScreenData\\'
 // const dataPath = 'C:\\Apprise\\Latest\\ScreenData'
 export default {
   getFileList: function (type) {

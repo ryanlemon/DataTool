@@ -1,12 +1,12 @@
 <template>
     <dir>
-        <menu-selector field-type='menu' init-value=''></menu-selector>
+        <menu-select field-type='menu' init-value=''></menu-select>
     </dir>
 </template>
 <script>
-import MenuSelector from './Base/Selector'
+import MenuSelect from './Base/Select'
 export default {
-  components: {MenuSelector}
+  components: {MenuSelect}
 }
 </script>
 
