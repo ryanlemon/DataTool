@@ -1,6 +1,6 @@
 <script>
 import fs from 'fs-extra'
-const dataPath = 'D:\\Develop\\VueProj\\ScreenData\\'
+import Global from '../Global'
 // const dataPath = 'C:\\Apprise\\Latest\\ScreenData'
 export default {
   getFileList: function (type) {
@@ -19,7 +19,7 @@ export default {
       default:
         console.log('Invalid Type')
     }
-    return fs.readdirSync(dataPath + folderName + '\\')
+    return fs.readdirSync(Global.dataPath + folderName + '\\')
   }
 }
 </script>

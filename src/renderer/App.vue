@@ -6,11 +6,14 @@
           class="el-menu-vertical-demo"
           @open="handleOpen"
           @close="handleClose">
-          <el-menu-item v-for="item in items"
-                        :key = item.index
-                        :index = item.index.toString()>
-            <router-link :to="item.name">{{item.label}}</router-link>
-          </el-menu-item>
+          <router-link v-for="item in items"
+                      :to="item.name"
+                      :key = item.index>          
+            <el-menu-item :index = item.index.toString()>
+              {{item.label}}
+            </el-menu-item>
+          </router-link>
+
         </el-menu>
       </el-aside>
       <el-main>

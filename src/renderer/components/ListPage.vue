@@ -12,7 +12,7 @@
                             :input-value="item.value"></list-input>
             </el-aside>
             <el-main>
-                <list-grid :grid-layout="gridLayout" :grid-data="gridData"></list-grid>
+                <list-grid :grid-setting="gridSetting"></list-grid>
             </el-main>
         </el-container>
     </el-container>
@@ -22,6 +22,7 @@ import ListSelect from './Base/Select'
 import JDB from './JsonData/JsonDB'
 import ListGrid from './Base/Grid'
 import ListInput from './Base/Input'
+import Global from './Global'
 export default {
   data () {
     return {
@@ -35,23 +36,26 @@ export default {
         {index: 7, name: 'displayField4', label: 'Display Field 4', value: ''},
         {index: 8, name: 'displayField5', label: 'Display Field 5', value: ''}
       ],
-      gridLayout: [
-        {headerName: 'List Value', field: 'list-value'},
-        {headerName: 'Label Text', field: 'list-value-label'},
-        {headerName: 'Display Field 1', field: 'dispaly-field-1'},
-        {headerName: 'Display Field 1', field: 'dispaly-field-2'},
-        {headerName: 'Display Field 1', field: 'dispaly-field-3'},
-        {headerName: 'Display Field 1', field: 'dispaly-field-4'},
-        {headerName: 'Display Field 1', field: 'dispaly-field-5'}
-      ]
+      gridSetting: {
+        gridLayout: [
+          {headerName: 'List Value', field: 'list-value'},
+          {headerName: 'Label Text', field: 'list-value-label'},
+          {headerName: 'Display Field 1', field: 'display-field-1'},
+          {headerName: 'Display Field 2', field: 'display-field-2'},
+          {headerName: 'Display Field 3', field: 'display-field-3'},
+          {headerName: 'Display Field 4', field: 'display-field-4'},
+          {headerName: 'Display Field 5', field: 'display-field-5'}
+        ],
+        gridData: []
+      }
     }
   },
   components: {ListSelect, ListGrid, ListInput},
   methods: {
     onValueChange: function (value, event) {
-      let data = JDB.getDetail('D:\\Develop\\VueProj\\ScreenData\\sd-list\\' + value)
-      this.gridData = data.value()['ds-list']['tt-list-values']
-      console.log(this.gridData)
+      let db = JDB.getDetail(Global.dataPath + '\\sd-list\\' + value)
+      var data = db.value()['ds-list']['tt-list-values']
+      this.gridSetting.gridData = data
     }
   }
 
