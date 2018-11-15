@@ -16,8 +16,7 @@ export default {
   },
   data () {
     return {
-      columnDefs: this.gridSetting.gridLayout,
-      rowData: this.gridSetting.gridData
+      columnDefs: this.gridSetting.gridLayout
     }
   },
   computed: {
