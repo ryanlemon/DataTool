@@ -14,8 +14,12 @@ export default {
   props: ['gridSettings'],
   data () {
     return {
+<<<<<<< HEAD
       columnDefs: this.gridSettings.gridLayout,
       rowData: []
+=======
+      columnDefs: this.gridSetting.gridLayout
+>>>>>>> 20e5d6daa6fc198d54d42a02a67cfdd159965f69
     }
   },
   methods: {
