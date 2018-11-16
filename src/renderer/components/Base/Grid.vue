@@ -2,7 +2,7 @@
     <ag-grid-vue style="width: 100%; height: 100%;"
                  class="ag-theme-balham"
                  :columnDefs="columnDefs"
-                 :rowData="gridData">
+                 :rowData="rowData">
     </ag-grid-vue>
 </template>
 <script>
@@ -11,22 +11,16 @@ import 'ag-grid-community/dist/styles/ag-grid.css'
 import 'ag-grid-community/dist/styles/ag-theme-balham.css'
 export default {
   name: 'grid',
-  props: {
-    gridSetting: Object
-  },
+  props: ['gridSettings'],
   data () {
     return {
-      columnDefs: this.gridSetting.gridLayout,
-      rowData: this.gridSetting.gridData
+      columnDefs: this.gridSettings.gridLayout,
+      rowData: []
     }
   },
-  computed: {
-    gridData: function () {
-      var data = []
-      this.gridSetting.gridData.map(
-        row => data.push(row)
-      )
-      return data
+  methods: {
+    setData (data) {
+      this.rowData = data
     }
   },
   components: {

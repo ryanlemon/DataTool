@@ -53,8 +53,8 @@
     }
   },
   "dependencies": {
-    "ag-grid-community": "^19.1.1",
-    "ag-grid-vue": "^19.1.1",
+    "ag-grid-community": "^19.1.2",
+    "ag-grid-vue": "^19.1.2",
     "axios": "^0.18.0",
     "element-ui": "^2.4.9",
     "fs-extra": "^7.0.0",

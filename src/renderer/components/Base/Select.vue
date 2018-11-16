@@ -9,7 +9,6 @@
     </el-select>
 </template>
 <script>
-import jsonFile from '../JsonData/JsonFile'
 export default {
   props: ['fieldType', 'initValue'],
   data () {
@@ -18,9 +17,6 @@ export default {
     }
   },
   computed: {
-    options: function () {
-      return jsonFile.getFileList(this.fieldType)
-    },
     inputType: function () {
       switch (this.fieldType) {
         case 'screen':
@@ -30,7 +26,8 @@ export default {
         case 'menu':
           return 'Menu Name'
       }
-    }
+    },
+    options: this.$db.getFileList(this.fieldType)
 
   },
   methods: {

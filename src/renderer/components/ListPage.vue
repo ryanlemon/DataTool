@@ -1,9 +1,9 @@
 <template>
-    <el-container>
+    <el-container id='list'>
         <el-header>
             <list-select field-type='list' init-value='' @change-value="onValueChange"></list-select>
         </el-header>
-        <el-container>
+        <el-container id='editor'>
             <el-aside>
                 <list-input v-for="item in Items"
                             :key="item.index"
@@ -12,7 +12,7 @@
                             :input-value="item.value"></list-input>
             </el-aside>
             <el-main>
-                <list-grid :grid-setting="gridSetting"></list-grid>
+                <list-grid ref="listgrid" :grid-settings="gridSetting"></list-grid>
             </el-main>
         </el-container>
     </el-container>
@@ -24,6 +24,7 @@ import ListGrid from './Base/Grid'
 import ListInput from './Base/Input'
 import Global from './Global'
 export default {
+  inheritAttrs: false,
   data () {
     return {
       Items: [
@@ -55,7 +56,7 @@ export default {
     onValueChange: function (value, event) {
       let db = JDB.getDetail(Global.dataPath + '\\sd-list\\' + value)
       var data = db.value()['ds-list']['tt-list-values']
-      this.gridSetting.gridData = data
+      this.$refs.listgrid.setData(data)
     }
   }
 

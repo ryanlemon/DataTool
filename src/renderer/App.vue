@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <el-container>
+    <el-container inheritAttrs=false>
       <el-aside width="100px">
         <el-menu
           class="el-menu-vertical-demo"
