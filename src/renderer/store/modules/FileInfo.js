@@ -1,12 +1,23 @@
 const state = {
-  path: 'C:\\Apprise\\Latest\\ScreenData\\',
-  listpath: this.path + 'sd-list\\',
-  messagepath: this.path + 'sd-message\\',
-  labelpath: this.path + 'sd-translation\\',
-  menupath: this.path + 'sd-menu\\',
-  screenpath: this.path + 'sd-screen\\'
+  path: 'D:\\Develop\\VueProj\\ScreenData\\'
 }
-
+const getters = {
+  listpath: state => {
+    return state.path + 'sd-list\\'
+  },
+  messagepath: state => {
+    return state.path + 'sd-message\\Default'
+  },
+  labelpath: state => {
+    return state.path + 'sd-translation\\'
+  },
+  menupath: state => {
+    return state.path + 'sd-menu\\'
+  },
+  screenpath: state => {
+    return state.path + 'sd-screen\\'
+  }
+}
 const mutations = {
   BLANK_PATH (state) {
     state.path = ''
@@ -25,5 +36,6 @@ const actions = {
 export default{
   state,
   mutations,
-  actions
+  actions,
+  getters
 }

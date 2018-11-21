@@ -19,10 +19,8 @@
 </template>
 <script>
 import ListSelect from './Base/Select'
-import JDB from './JsonData/JsonDB'
 import ListGrid from './Base/Grid'
 import ListInput from './Base/Input'
-import Global from './Global'
 export default {
   inheritAttrs: false,
   data () {
@@ -54,7 +52,7 @@ export default {
   components: {ListSelect, ListGrid, ListInput},
   methods: {
     onValueChange: function (value, event) {
-      let db = JDB.getDetail(Global.dataPath + '\\sd-list\\' + value)
+      let db = this.$db.getDetail(this.$store.getters.listpath, value)
       var data = db.value()['ds-list']['tt-list-values']
       this.$refs.listgrid.setData(data)
     }

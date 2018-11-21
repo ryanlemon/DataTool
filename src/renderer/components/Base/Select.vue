@@ -27,8 +27,18 @@ export default {
           return 'Menu Name'
       }
     },
-    options: this.$db.getFileList(this.fieldType)
 
+    options: function () {
+      let items = null
+      switch (this.fieldType) {
+        case 'list':
+          items = this.$db.getFileList(this.$store.getters.listpath)
+          break
+        default:
+          items = ['I', 'have', 'no', 'options']
+      }
+      return items
+    }
   },
   methods: {
     onChange: function (event) {

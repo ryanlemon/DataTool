@@ -3,30 +3,13 @@ import path from 'path'
 import Datastore from 'lowdb'
 import FileSync from 'lowdb/adapters/FileSync'
 
-const dataPath = 'C:\\Apprise\\Latest\\ScreenData'
 export default {
-  getFileList: function (type) {
-    console.log('get file list -- type: ' + type)
-    let folderName = 'sd-'
-    switch (type) {
-      case 'screen':
-      case 'list':
-      case 'menu':
-        folderName = folderName + type
-        break
-      case 'message':
-      case 'translation':
-        folderName = folderName + type + '\\'
-        break
-      default:
-        console.log('Invalid Type')
-    }
-    folderName = path.join(dataPath, folderName)
-    return fs.readdir(folderName)
+  getFileList: function (dirpath) {
+    console.log(dirpath)
+    return fs.readdirSync(dirpath)
   },
-  getDetail: function (filePath) {
-    console.log(filePath)
-    var adapter = new FileSync(filePath)
+  getDetail: function (dirPath, fileName) {
+    var adapter = new FileSync(path.join(dirPath, fileName))
     return Datastore(adapter)
   }
 }
