@@ -9,7 +9,11 @@ export default {
     return fs.readdirSync(dirpath)
   },
   getDetail: function (dirPath, fileName) {
-    var adapter = new FileSync(path.join(dirPath, fileName))
+    let fullpath = dirPath
+    if (fileName) {
+      fullpath = path.join(dirPath, fileName)
+    }
+    var adapter = new FileSync(fullpath)
     return Datastore(adapter)
   }
 }

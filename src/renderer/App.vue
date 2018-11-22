@@ -46,6 +46,10 @@
       handleClose (key, keyPath) {
         console.log(key, keyPath)
       }
+    },
+    created: function () {
+      var labeldb = this.$db.getDetail(this.$store.getters.labelpath)
+      this.$store.originalDispatch('refreshLabel', labeldb.value()['ds-translation']['tt-translation'])
     }
   }
 </script>

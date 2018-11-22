@@ -54,6 +54,7 @@ export default {
     onValueChange: function (value, event) {
       let db = this.$db.getDetail(this.$store.getters.listpath, value)
       var data = db.value()['ds-list']['tt-list-values']
+      console.log(this.$store.state.LabelData.label)
       this.$refs.listgrid.setData(data)
     }
   }

@@ -1,9 +1,5 @@
 const state = {
-  listdata: null,
-  labeldata: null,
-  messagedata: null,
-  menudata: null,
-  screendata: null
+  labeldata: null
 }
 
 const mutations = {

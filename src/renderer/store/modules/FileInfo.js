@@ -1,15 +1,16 @@
 const state = {
-  path: 'D:\\Develop\\VueProj\\ScreenData\\'
+  // path: 'D:\\Develop\\VueProj\\ScreenData\\'
+  path: 'D:\\Ryan\\Eletron-Vue-Project\\ScreenData\\'
 }
 const getters = {
   listpath: state => {
     return state.path + 'sd-list\\'
   },
   messagepath: state => {
-    return state.path + 'sd-message\\Default'
+    return state.path + 'sd-message\\'
   },
   labelpath: state => {
-    return state.path + 'sd-translation\\'
+    return state.path + 'sd-translation\\Default.json'
   },
   menupath: state => {
     return state.path + 'sd-menu\\'
