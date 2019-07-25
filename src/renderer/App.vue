@@ -17,7 +17,9 @@
         </el-menu>
       </el-aside>
       <el-main>
-        <router-view></router-view>
+        <keep-alive :exclude="['ListSelect']">
+          <router-view></router-view>
+        </keep-alive>
       </el-main>
     </el-container>
   </div>

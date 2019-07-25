@@ -37,6 +37,7 @@ export default {
         default:
           items = ['I', 'have', 'no', 'options']
       }
+      console.log('get files again')
       return items
     }
   },
