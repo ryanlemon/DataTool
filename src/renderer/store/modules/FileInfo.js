@@ -1,6 +1,6 @@
 const state = {
   // path: 'D:\\Develop\\VueProj\\ScreenData\\'
-  path: 'D:\\Ryan\\Eletron-Vue-Project\\ScreenData\\'
+  path: 'C:\\GitHub\\ScreenData\\'
 }
 const getters = {
   listpath: state => {
