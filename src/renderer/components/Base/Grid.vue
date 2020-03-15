@@ -2,7 +2,8 @@
     <ag-grid-vue style="width: 100%; height: 100%;"
                  class="ag-theme-balham"
                  :columnDefs="columnDefs"
-                 :rowData="rowData">
+                 :rowData="rowData"
+                 :gridReady="onGridReady">
     </ag-grid-vue>
 </template>
 <script>
@@ -15,12 +16,23 @@ export default {
   data () {
     return {
       columnDefs: this.gridSettings.gridLayout,
-      rowData: []
+      rowData: null
     }
   },
+  beforeMount () {
+    this.createRowData()
+  },
   methods: {
+    onGridReady (params) {
+      console.log('A01', params)
+      this.gridApi = params.api
+      this.columnApi = params.columnApi
+    },
     setData (data) {
-      this.rowData = data
+      this.gridApi.setRowData(data)
+    },
+    createRowData () {
+      this.rowData = this.gridData
     }
   },
   components: {
