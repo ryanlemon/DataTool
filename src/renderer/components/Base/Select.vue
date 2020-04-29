@@ -23,8 +23,12 @@ export default {
           return 'Screen Name'
         case 'list':
           return 'List Name'
+        case 'label':
+          return 'Label Num'
         case 'menu':
           return 'Menu Name'
+        case 'message':
+          return 'Message Num'
       }
     },
 
@@ -33,6 +37,13 @@ export default {
       switch (this.fieldType) {
         case 'list':
           items = this.$db.getFileList(this.$store.getters.listpath)
+          break
+        case 'screen':
+          items = this.$db.getFileList(this.$store.getters.screenpath)
+          break
+        case 'label':
+        case 'message':
+          items = this.getLableItems()
           break
         default:
           items = ['I', 'have', 'no', 'options']
@@ -43,6 +54,9 @@ export default {
   methods: {
     onChange: function (event) {
       this.$emit('change-value', this.selectValue, event)
+    },
+    getLableItems: function () {
+      return []
     }
   }
 }

@@ -24,7 +24,6 @@ export default {
   },
   methods: {
     onGridReady (params) {
-      console.log('A01', params)
       this.gridApi = params.api
       this.columnApi = params.columnApi
     },
@@ -41,4 +40,3 @@ export default {
 
 }
 </script>
-

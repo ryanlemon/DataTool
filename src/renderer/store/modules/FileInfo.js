@@ -7,7 +7,7 @@ const getters = {
     return state.path + 'sd-list\\'
   },
   messagepath: state => {
-    return state.path + 'sd-message\\'
+    return state.path + 'sd-messages\\Default.json'
   },
   labelpath: state => {
     return state.path + 'sd-translation\\Default.json'

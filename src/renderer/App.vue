@@ -1,6 +1,6 @@
 <template>
-  <div id="app">
-    <el-container inheritAttrs=false>
+  <div id="app" class="application">
+    <el-container>
       <el-aside width="100px">
         <el-menu
           class="el-menu-vertical-demo"
@@ -16,7 +16,7 @@
 
         </el-menu>
       </el-aside>
-      <el-main>
+      <el-main class="el-main-screen">
         <router-view></router-view>
       </el-main>
     </el-container>
@@ -56,4 +56,11 @@
 
 <style>
   /* CSS */
+  .el-main-screen {
+    display: flex;
+  }
+  .application {
+    width: 100%;
+    height: 100%;
+  }
 </style>

@@ -1,9 +1,9 @@
 <template>
-    <el-container id='list'>
+    <el-container id='list-container'>
         <el-header>
             <list-select field-type='list' init-value='' @change-value="onValueChange"></list-select>
         </el-header>
-        <el-container id='editor'>
+        <el-container id='list-editor'>
             <el-aside>
                 <list-input v-for="item in Items"
                             :key="item.index"
